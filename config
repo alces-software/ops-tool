@@ -1,0 +1,4 @@
+OPSCLI_K8S_NAMESPACE=project-test
+OPSCLI_PROJECTS_PATH=/opt/myproject/projects
+OPSCLI_PROJECT_NAME=project-001
+OPSCLI_REPO_PATH=/path/to/repo

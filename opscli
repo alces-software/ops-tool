@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -e
+export OPSCLI_WORKDIR=$(cd $(dirname $0) && pwd)
+# shellcheck source=common
+. "$OPSCLI_WORKDIR/common"
+
+cli_help() {
+  cli_name=${0##*/}
+  echo "
+$cli_name
+OPS  CLI
+Version: $(cat $OPSCLI_WORKDIR/VERSION)
+https://github.com/<???>
+
+Usage: $cli_name [command]
+
+Commands:
+  command   Command
+  *         Help
+"
+  exit 1
+}
+
+cli_log "Exporting config ..."
+[ ! -f "$OPSCLI_WORKDIR/config" ] \
+  && echo "ERROR: No $OPSCLI_WORKDIR/config file found. " \
+  && echo "cp $OPSCLI_WORKDIR/config.template $OPSCLI_WORKDIR/config and adjust." \
+  && exit 1
+
+export $(cat "$OPSCLI_WORKDIR/config" | xargs)
+
+case "$1" in
+  command|c)
+    "$OPSCLI_WORKDIR/commands/command"
+    ;;
+  *)
+    cli_help
+    ;;
+esac
