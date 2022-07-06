@@ -16,6 +16,7 @@ Usage: $cli_name [command]
 
 Commands:
   command   Command
+  get_logs  Logs
   *         Help
 "
   exit 1
@@ -32,6 +33,9 @@ export $(cat "$OPSCLI_WORKDIR/config" | xargs)
 case "$1" in
   command|c)
     "$OPSCLI_WORKDIR/commands/command"
+    ;;
+  get_logs|g)
+    "$OPSCLI_WORKDIR/commands/get_logs"
     ;;
   *)
     cli_help
