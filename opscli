@@ -15,7 +15,7 @@ https://github.com/<???>
 Usage: $cli_name [command]
 
 Commands:
-  command   Command
+  hostname  Hostname
   get_logs  Logs
   *         Help
 "
@@ -31,8 +31,8 @@ cli_log "Exporting config ..."
 export $(cat "$OPSCLI_WORKDIR/config" | xargs)
 
 case "$1" in
-  command|c)
-    "$OPSCLI_WORKDIR/commands/command"
+  hostname|h)
+    "$OPSCLI_WORKDIR/commands/hostname"
     ;;
   get_logs|g)
     "$OPSCLI_WORKDIR/commands/get_logs"
