@@ -1,0 +1,59 @@
+#!/bin/bash
+
+# Script to download logs from a specified ($IP) storage array.
+
+
+
+echo -n "Enter array <hostname>c1 or IP address: " ; read IP ;
+
+echo ""
+
+prompt="Enter manage password (stored in vault): "
+unset password
+while IFS= read -p "$prompt" -r -s -n 1 char
+do
+    if [[ $char == $'\0' ]]
+    then
+        break
+    fi
+    prompt='*'
+    password+="$char"
+done
+echo
+echo "Done."
+
+echo ""
+
+echo -n "Save as (filename.zip): " ; read FILENAME ;
+
+echo ""
+
+echo "#  #  #"
+
+echo ""
+
+#  Pipes into a screen here
+
+HOST=$IP
+export USER=manage
+PASSWD=$password
+
+
+
+screen -dm bash -c "ftp -n $HOST << EOT
+binary
+user $USER $PASSWD
+prompt
+get logs /users/fcops/Downloads/$FILENAME
+bye
+EOT"
+
+echo "Logs are being downloading to -> /users/fcops/Downloads"
+
+echo ""
+
+echo "This operation will take ~10 minutes. Goodbye."
+
+echo ""
+
+echo "#  #  #"
