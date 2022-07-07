@@ -31,3 +31,7 @@ curl https://raw.githubusercontent.com/alces-software/ops-tool/main/commands/hos
 mkdir /opt/ops-tool/logs
 
 curl https://raw.githubusercontent.com/alces-software/ops-tool/main/logs/.gitignore > /opt/ops-tool/logs/.gitignore
+
+# Permissions
+
+chmod u+x /opt/ops-tool/*
