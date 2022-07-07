@@ -2,6 +2,8 @@
 
 # Prerequisites 
 
+echo "alias opscli="bash /opt/ops-tool/opscli"" >> .bashrc
+
 # Packages
 
 yum install -y ftp
