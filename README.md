@@ -15,3 +15,5 @@ From fcgateway -
 Usage:
 
 `opscli` from fcgateway
+
+N.B ~ You will need to be `fcops` user in a new terminal after intstall to use.
