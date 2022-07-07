@@ -34,4 +34,4 @@ curl https://raw.githubusercontent.com/alces-software/ops-tool/main/logs/.gitign
 
 # Permissions
 
-chmod u+x /opt/ops-tool/*
+chmod -R u+x /opt/ops-tool/*
