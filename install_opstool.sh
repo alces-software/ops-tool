@@ -2,7 +2,7 @@
 
 # Prerequisites 
 
-echo "alias opscli='bash /opt/ops-tool/opscli'" >> .bashrc
+echo "alias opscli=\"bash /opt/ops-tool/opscli\"" >> /users/fcops/.bashrc
 
 # Packages
 
