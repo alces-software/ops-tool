@@ -15,8 +15,8 @@ https://github.com/<???>
 Usage: $cli_name [command]
 
 Commands:
-  hostname  Hostname
-  get_logs  Logs
+  hostname  Gives hostname
+  get_logs  Download storage array logs
   *         Help
 "
   exit 1
