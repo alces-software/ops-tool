@@ -8,9 +8,9 @@ cli_help() {
   cli_name=${0##*/}
   echo "
 $cli_name
-OPS  CLI
+ALCES OPS TOOL
 Version: $(cat $OPSCLI_WORKDIR/VERSION)
-https://github.com/<???>
+https://github.com/alces-software/ops-tool.git
 
 Usage: $cli_name [command]
 
