@@ -11,3 +11,7 @@ From fcgateway -
 `sudo su -`
 
 `curl https://raw.githubusercontent.com/alces-software/ops-tool/main/install_opstool.sh | /bin/bash`
+
+Usage:
+
+`opscli` from fcgateway
