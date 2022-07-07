@@ -10,13 +10,13 @@ yum install -y ftp
 
 mkdir /opt/ops-tool
 
-curl https://raw.githubusercontent.com/alces-software/ops-tool/main/opscli > /opt/ops-tool
+curl https://raw.githubusercontent.com/alces-software/ops-tool/main/opscli > /opt/ops-tool/opscli
 
-curl https://raw.githubusercontent.com/alces-software/ops-tool/main/config > /opt/ops-tool
+curl https://raw.githubusercontent.com/alces-software/ops-tool/main/config > /opt/ops-tool/config
 
-curl https://raw.githubusercontent.com/alces-software/ops-tool/main/common > /opt/ops-tool
+curl https://raw.githubusercontent.com/alces-software/ops-tool/main/common > /opt/ops-tool/common
 
-curl https://raw.githubusercontent.com/alces-software/ops-tool/main/VERSION > /opt/ops-tool
+curl https://raw.githubusercontent.com/alces-software/ops-tool/main/VERSION > /opt/ops-tool/VERSION
 
 # Commands sub-directory
 
@@ -30,4 +30,4 @@ curl https://raw.githubusercontent.com/alces-software/ops-tool/main/commands/hos
 
 mkdir /opt/ops-tool/logs
 
-curl https://raw.githubusercontent.com/alces-software/ops-tool/main/logs/.gitignore > /opt/ops-tool/logs
+curl https://raw.githubusercontent.com/alces-software/ops-tool/main/logs/.gitignore > /opt/ops-tool/logs/.gitignore
