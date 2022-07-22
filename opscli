@@ -16,7 +16,7 @@ Usage: $cli_name [command]
 
 Commands:
   hostname  Gives hostname
-  get_logs  Download storage array logs
+  get-logs  Download storage array logs
   *         Help
 "
   exit 1
@@ -35,7 +35,7 @@ case "$1" in
     "$OPSCLI_WORKDIR/commands/hostname"
     ;;
   get_logs|g)
-    "$OPSCLI_WORKDIR/commands/get_logs"
+    "$OPSCLI_WORKDIR/commands/get-logs"
     ;;
   *)
     cli_help
