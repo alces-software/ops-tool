@@ -24,7 +24,7 @@ curl https://raw.githubusercontent.com/alces-software/ops-tool/main/VERSION > /o
 
 mkdir /opt/ops-tool/commands
 
-curl https://raw.githubusercontent.com/alces-software/ops-tool/main/commands/get_logs > /opt/ops-tool/commands/get_logs
+curl https://raw.githubusercontent.com/alces-software/ops-tool/main/commands/get-logs > /opt/ops-tool/commands/get-logs
 
 curl https://raw.githubusercontent.com/alces-software/ops-tool/main/commands/hostname > /opt/ops-tool/commands/hostname
 
