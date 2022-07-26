@@ -34,7 +34,7 @@ case "$1" in
   hostname|h)
     "$OPSCLI_WORKDIR/commands/hostname"
     ;;
-  get_logs|g)
+  get-logs|g)
     "$OPSCLI_WORKDIR/commands/get-logs"
     ;;
   *)
