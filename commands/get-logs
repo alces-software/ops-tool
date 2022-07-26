@@ -53,7 +53,3 @@ echo "Logs are being downloading to -> /users/fcops/Downloads"
 echo ""
 
 echo "This operation will take ~10 minutes. Goodbye."
-
-echo ""
-
-echo "#  #  #"
