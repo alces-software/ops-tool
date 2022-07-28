@@ -8,6 +8,16 @@ echo -n "Enter array <hostname>c1 or IP address: " ; read IP ;
 
 echo ""
 
+if grep -Fqw "$IP" /etc/hosts
+then
+    echo "Array / IP found"
+else
+    echo "Array / IP not found... Check /etc/hosts"
+    exit
+fi
+
+echo ""
+
 prompt="Enter manage password (stored in vault): "
 unset password
 while IFS= read -p "$prompt" -r -s -n 1 char
@@ -38,6 +48,11 @@ HOST=$IP
 export USER=manage
 PASSWD=$password
 
+##########################
+
+# test password works
+
+##########################
 
 
 screen -dm bash -c "ftp -n $HOST << EOT
