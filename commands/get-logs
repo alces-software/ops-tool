@@ -3,11 +3,12 @@
 # Script to download logs from a specified ($IP) storage array.
 
 
-
+# Take array name or IP as user input
 echo -n "Enter array <hostname>c1 or IP address: " ; read IP ;
 
 echo ""
 
+# Check hostname / IP is in /etc/hosts file... i.e is accessable from FCGW
 if grep -Fqw "$IP" /etc/hosts
 then
     echo "Array / IP found"
@@ -18,6 +19,7 @@ fi
 
 echo ""
 
+# Take password as user input
 prompt="Enter manage password (stored in vault): "
 unset password
 while IFS= read -p "$prompt" -r -s -n 1 char
@@ -34,6 +36,22 @@ echo "Done."
 
 echo ""
 
+# Verify password is correct
+if [ "$(sshpass -p $password ssh -tt -o ConnectTimeout=10 manage@masterary1c1 exit >/dev/null 2>&1; echo $?;)" -eq 0 ] ;
+
+then
+
+    echo "Password Accepted"
+
+else
+
+    echo "Password Failed"
+    exit
+fi
+
+echo ""
+
+# Take filename as user input, saves to /users/fcops/Downloads/<filename>
 echo -n "Save as (filename.zip): " ; read FILENAME ;
 
 echo ""
@@ -47,13 +65,6 @@ echo ""
 HOST=$IP
 export USER=manage
 PASSWD=$password
-
-##########################
-
-# test password works
-
-##########################
-
 
 screen -dm bash -c "ftp -n $HOST << EOT
 binary
